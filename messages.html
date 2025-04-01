@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .message-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px;
+            font-weight: bold; /* Messages will be bold by default */
+        }
+        .message-item.read {
+            font-weight: normal; /* When marked as read, the text will not be bold */
+        }
+        .message-item.read .btn-read {
+            background-color: #6c757d; /* Gray color for the button */
+            border-color: #6c757d;
+        }
+        .message-item:hover {
+            background-color: #f8f9fa;
+        }
+        .message-preview {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 300px;
+        }
+        .message-header {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h2 class="mb-4">Messages</h2>
+        
+        <div class="list-group">
+            <!-- Message Item 1 -->
+            <div class="message-item list-group-item" id="message1" data-bs-toggle="modal" data-bs-target="#messageModal" onclick="openMessage('John Doe', '2 hours ago', 'Hey! I just wanted to check in and see how things are going. Let me know if you need any help with the project!', 'message1')">
+                <div class="d-flex justify-content-between">
+                    <div class="message-header">
+                        <span>John Doe</span> <small class="text-muted">- 2 hours ago</small>
+                    </div>
+                    <button class="btn btn-primary btn-read" id="markReadButton1" onclick="markAsRead('message1', event)">Mark as Read</button>
+                </div>
+                <div class="message-preview">
+                    <p>Hey! I just wanted to check in and see how things are going. Let me know...</p>
+                </div>
+            </div>
+
+            <!-- Message Item 2 -->
+            <div class="message-item list-group-item" id="message2" data-bs-toggle="modal" data-bs-target="#messageModal" onclick="openMessage('Jane Smith', '5 hours ago', 'Remember to submit the report by tomorrow. Let me know if you need help.', 'message2')">
+                <div class="d-flex justify-content-between">
+                    <div class="message-header">
+                        <span>Jane Smith</span> <small class="text-muted">- 5 hours ago</small>
+                    </div>
+                    <button class="btn btn-primary btn-read" id="markReadButton2" onclick="markAsRead('message2', event)">Mark as Read</button>
+                </div>
+                <div class="message-preview">
+                    <p>Remember to submit the report by tomorrow. Let me know if you need help...</p>
+                </div>
+            </div>
+
+            <!-- Message Item 3 -->
+            <div class="message-item list-group-item" id="message3" data-bs-toggle="modal" data-bs-target="#messageModal" onclick="openMessage('Alex Brown', '1 day ago', 'Hey! Are you free this weekend? I wanted to catch up on some projects.', 'message3')">
+                <div class="d-flex justify-content-between">
+                    <div class="message-header">
+                        <span>Alex Brown</span> <small class="text-muted">- 1 day ago</small>
+                    </div>
+                    <button class="btn btn-primary btn-read" id="markReadButton3" onclick="markAsRead('message3', event)">Mark as Read</button>
+                </div>
+                <div class="message-preview">
+                    <p>Hey! Are you free this weekend? I wanted to catch up on some projects...</p>
+                </div>
+            </div>
+
+            <!-- Message Item 4 -->
+            <div class="message-item list-group-item" id="message4" data-bs-toggle="modal" data-bs-target="#messageModal" onclick="openMessage('Maria Green', '3 days ago', 'Thanks for helping me with that presentation last week. I really appreciate it!', 'message4')">
+                <div class="d-flex justify-content-between">
+                    <div class="message-header">
+                        <span>Maria Green</span> <small class="text-muted">- 3 days ago</small>
+                    </div>
+                    <button class="btn btn-primary btn-read" id="markReadButton4" onclick="markAsRead('message4', event)">Mark as Read</button>
+                </div>
+                <div class="message-preview">
+                    <p>Thanks for helping me with that presentation last week. I really appreciate it!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal for Full Message and Reply -->
+    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="messageModalLabel">Message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 id="sender-name"></h5>
+                    <p id="message-time" class="text-muted"></p>
+                    <div id="full-message" class="mb-3"></div>
+                    <hr>
+                    <h6>Reply:</h6>
+                    <textarea id="reply-input" class="form-control" rows="3" placeholder="Write your reply..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="sendReply()">Send Reply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to open a message in the modal
+        function openMessage(sender, time, message, messageId) {
+            // Check if the message is already marked as read
+            if (document.getElementById(messageId).classList.contains('read')) {
+                return; // Prevent opening if the message is marked as read
+            }
+
+            document.getElementById('sender-name').innerText = sender;
+            document.getElementById('message-time').innerText = time;
+            document.getElementById('full-message').innerText = message;
+
+            // Mark the message as read
+            document.getElementById(messageId).classList.add('read');
+        }
+
+        // Function to handle sending the reply (you can implement actual sending logic here)
+        function sendReply() {
+            const reply = document.getElementById('reply-input').value;
+            alert("Your reply: " + reply);  // Simulating sending the reply
+            document.getElementById('reply-input').value = ''; // Clear the reply input field
+        }
+
+        // Function to mark the message as read
+        function markAsRead(messageId, event) {
+            event.stopPropagation();  // Prevent the modal from opening when clicking "Mark as Read"
+            const messageItem = document.getElementById(messageId);
+            messageItem.classList.add('read'); // Mark the message as read by removing the bold
+            const button = document.getElementById('markReadButton' + messageId.slice(-1));
+            button.classList.add('btn-secondary');  // Change button color to gray
+            button.disabled = true;  // Disable the button to prevent further clicks
+        }
+    </script>
+</body>
+</html>

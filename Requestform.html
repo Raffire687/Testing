@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallTek VM Request Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h2 class="text-center">CallTek VM Request Form</h2>
+        <hr>
+
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="systemType">System Type</label>
+                    <input type="text" class="form-control" id="systemType" value="Virtual Machine" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="requesterName">Name of Requester</label>
+                    <input type="text" class="form-control" id="requesterName">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="requestDate">Request Date</label>
+                    <input type="date" class="form-control" id="requestDate">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="engineerName">Name of Engineer</label>
+                    <input type="text" class="form-control" id="engineerName">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="revisionDate">Revision Date</label>
+                    <input type="date" class="form-control" id="revisionDate">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="approvedBy">Approved by</label>
+                    <input type="text" class="form-control" id="approvedBy">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="versionNo">Version No.</label>
+                    <input type="text" class="form-control" id="versionNo" value="VMRF 1.1" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="approvalDate">Approval Date</label>
+                    <input type="date" class="form-control" id="approvalDate">
+                </div>
+            </div>
+
+            <hr>
+
+            <h4>Virtual Machine Details</h4>
+
+            <div class="form-group">
+                <label for="cpuCores">CPU Cores</label>
+                <input type="number" class="form-control" id="cpuCores">
+            </div>
+
+            <div class="form-group">
+                <label for="memory">Memory</label>
+                <input type="text" class="form-control" id="memory">
+            </div>
+
+            <div class="form-group">
+                <label for="diskSize">Disk Size</label>
+                <input type="text" class="form-control" id="diskSize">
+            </div>
+
+            <div class="form-group">
+                <label>Number of LAN Interfaces</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="lanInterfaces" id="lan1" value="1">
+                    <label class="form-check-label" for="lan1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="lanInterfaces" id="lan2" value="2">
+                    <label class="form-check-label" for="lan2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="lanInterfaces" id="lan3" value="3">
+                    <label class="form-check-label" for="lan3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="lanInterfaces" id="lan4" value="4">
+                    <label class="form-check-label" for="lan4">4</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Number of WAN Interfaces</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="wanInterfaces" id="wan1" value="1">
+                    <label class="form-check-label" for="wan1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="wanInterfaces" id="wan2" value="2">
+                    <label class="form-check-label" for="wan2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="wanInterfaces" id="wan3" value="3">
+                    <label class="form-check-label" for="wan3">3</label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="wanInterfaces" id="wan4" value="4">
+                    <label class="form-check-label" for="wan4">4</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="operatingSystem">Operating System</label>
+                <input type="text" class="form-control" id="operatingSystem">
+            </div>
+
+            <div class="form-group">
+                <label>Applications</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="lamp" value="LAMP">
+                    <label class="form-check-label" for="lamp">LAMP</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="mailServer" value="Mail Server">
+                    <label class="form-check-label" for="mailServer">Mail Server</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="dnsServer" value="DNS Server">
+                    <label class="form-check-label" for="dnsServer">DNS Server</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="others" value="Others">
+                    <label class="form-check-label" for="others">Others (specify below)</label>
+                </div>
+                <input type="text" class="form-control mt-2" id="otherApplications" placeholder="Specify other applications">
+            </div>
+
+            <div class="form-group">
+                <label>Public IP Address</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="publicIp" id="publicIpYes" value="Yes">
+                    <label class="form-check-label" for="publicIpYes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="publicIp" id="publicIpNo" value="No">
+                    <label class="form-check-label" for="publicIpNo">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Internal IP</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="internalIp" id="internalIpYes" value="Yes">
+                    <label class="form-check-label" for="internalIpYes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="internalIp" id="internalIpNo" value="No">

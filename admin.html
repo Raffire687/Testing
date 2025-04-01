@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom Styles for Admin Panel */
+        body {
+            background-color: #ffffff;
+
+        }
+
+        .sidebar {
+            background-color: #3658a3; /* Dark background */
+            color: white;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            color: white;
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background-color: #031c8f; /* Slightly lighter on hover */
+        }
+
+        .content {
+            margin-left: 250px; /* Adjust based on sidebar width */
+            padding: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: #eb9720; /* Primary color */
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <a href="admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="user.html"><i class="fas fa-users"></i> Users</a>
+        <a href="#"><i class="fas fa-chart-bar"></i> Reports</a>
+        <a href="Requestform.html"> <i class="fas fa-question-circle"> </i> Request</a>
+        <a href="ticketmanagement.html"> <i class="fa-solid fa-ticket" style="color: #ffffff;"></i> Ticket</a>
+        <a href="excel.html"><i class="fa-solid fa-table" style="color: #ffffff;"></i> Excel </a>
+        <a href="Server.html"><i class="fa-solid fa-server" style="color: #ffffff;"> </i> Server</a>
+        <a href="index.html"><i class="fa-solid fa-bars-progress" style="color: #ffffff;"></i> </i> Index </a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+
+    <div class="content">
+        <div class="container-fluid">
+            <h1>Admin Dashboard</h1>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Users Overview
+                        </div>
+                        <div class="card-body">
+                            <p>Total Users: 120</p>
+                            <p>Active Users: 80</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            Recent Activity
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Action</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>John Doe</td>
+                                        <td>Created Post</td>
+                                        <td>2024-01-20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jane Smith</td>
+                                        <td>Updated Profile</td>
+                                        <td>2024-01-21</td>
+                                    </tr>
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            System Statistics
+                        </div>
+                        <div class="card-body">
+                            <p>System load, memory usage, etc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

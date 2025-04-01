@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Progress</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS for gradient tables */
+    .table-gradient thead {
+      background: linear-gradient(to bottom, #f8f9fa, #e9ecef); /* Light gray gradient */
+      color: #000;
+    }
+
+    .table-gradient tbody tr:nth-child(odd) {
+      background-color: #f9f9f9; /* Very light gray for odd rows */
+    }
+
+    .table-gradient tbody tr:nth-child(even) {
+      background-color: #ffffff; /* White for even rows */
+    }
+
+    .table-gradient tbody tr:hover {
+      background-color: #e0f7fa; /* Light cyan on hover */
+    }
+
+    /* Optional: A more subtle gradient for the table body */
+    .table-gradient tbody {
+      /* background: linear-gradient(to bottom, #ffffff, #f0f0f0); */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" value="Czar Regis" readonly>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="dateDeployed">Date Deployed:</label>
+        <input type="date" class="form-control" id="dateDeployed">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="position">Position:</label>
+        <input type="text" class="form-control" id="position" value="IT NET On the job training" readonly>
+      </div>
+    </div>
+    <div class="col-md-6">
+      
+</div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-gradient">
+      <thead>
+        <tr>
+          <th>CODE</th>
+          <th>Training Course</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Remark</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><input type="text" class="form-control" value="Overview of Linux Basic command"></td>
+          <td><input type="date" class="form-control"></td>
+          <td>Done</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><input type="text" class="form-control" value="Standard SOP for IT Helpdesk"></td>
+          <td><input type="date" class="form-control"></td>
+          <td>Done</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><input type="text" class="form-control" value="Servers in PH and US data centers"></td>
+          <td><input type="date" class="form-control"></td>
+          <td>Done</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><input type="text" class="form-control" value="LAMP Server Creation & Window Server VM Creation"></td>
+          <td><input type="date" class="form-control"></td>
+          <td>Done</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><input type="text" class="form-control" value="Virtual Machine Creation Vsphere"></td>
+          <td><input type="date" class="form-control"></td>
+          <td>Done</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><input type="text" class="form-control" value="Password Repository Online"></td>
+          <td><input type="date" class="form-control"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><input type="text" class="form-control" value="Additional: Github Repository"></td>
+          <td><input type="date" class="form-control"></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

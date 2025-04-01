@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom Styles for User Panel */
+        body {
+            background-color: #ffffff; /* Lighter gray */
+        }
+
+        .sidebar {
+            background-color: #3658a3; /* Light background */
+            color: #495057; 
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            border-right: 1px solid #dee2e6; /* Add a subtle border */
+        }
+
+        .sidebar a {
+            color: #ffffff;
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background-color: #031c8f; /* Slightly darker on hover */
+        }
+
+        .content {
+            margin-left: 200px; /* Adjust based on sidebar width */
+            padding: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+        }
+
+        .card-header {
+            background-color: #eb9720; /* White header */
+            color: #ffffff; /* Darker text */
+            border-bottom: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <a href="admin.html"><i class="fa-solid fa-arrow-left"></i> Back</a>
+        <a href="#"><i class="fas fa-user"></i> Profile</a>
+        <a href="messages.html"><i class="fas fa-envelope"></i> Messages</a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+
+    <div class="content">
+        <div class="container-fluid">
+            <h1>User Dashboard</h1>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            Your Profile
+                        </div>
+                        <div class="card-body">
+                            <p>Name: User Name</p>
+                            <p>Email: user@example.com</p>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            Notifications
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>New message from Admin</li>
+                                <li>Your request has been approved</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Activity Feed
+                        </div>
+                        <div class="card-body">
+                            <p>Your recent posts, comments, etc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
