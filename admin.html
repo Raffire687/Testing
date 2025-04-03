@@ -23,7 +23,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 250px;
+            width: 200px;
             padding-top: 20px;
         }
 
@@ -40,15 +40,14 @@
 
         /* Navbar */
         .main-header.navbar {
-            z-index: 10;
-            position: fixed;
-            top: 0;
-            left: 250px; /* Move navbar to the right side of the sidebar */
-            width: calc(100% - 250px); /* Adjust navbar width */
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+         z-index: 10;
+         position: absolute;
+         top: 0;
+         left: 100; /* Ensure it starts from the very left */
+         width: 100%; /* Extend to cover the full width */
+         background-color: #ffffff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
         /* Content */
         .content {
             margin-left: 250px; /* Account for the sidebar */
@@ -84,11 +83,13 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-light navbar-white">
-        <div class="container">
+    <nav class="main-header navbar navbar-expand navbar-dark" style="background-color: #3658a3; ">
+              
+        <div class="container-fluid">
             <a href="index3.html" class="navbar-brand">
-                <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <img src="CallTekLogo.png" alt="CallTekLogo" class="brand-image img-circle elevation-3" style="opacity: .8;c width: 90px; height: 70px;">
+
+                <span class="brand-text font-weight-light">CallTek</span>
             </a>
             <!-- Left navbar links -->
             <ul class="navbar-nav">
