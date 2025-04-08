@@ -7,10 +7,41 @@
 
     <link rel="stylesheet" href="ticket.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        /* Custom background colors */
+        .create-ticket-container {
+            background-color: #FF7900;
+            padding: 20px;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .ticket-list-container th {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            text-align: center;
+        } 
+
+        h2.mt-3 {
+        color: #ffffff; /* White color for example */
+        }
+
+        .ticket-list-container {
+            background-color: #005299;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgb(255, 255, 255);
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container mt-5">
+<div class="container mt-5 create-ticket-container">
     <h2>Create New Ticket</h2>
     <form>
         <div class="form-row">
@@ -59,8 +90,10 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+</div>
 
-    <h2 class="mt-5">Ticket List</h2>
+<div class="container mt-5 ticket-list-container">
+    <h2 class="mt-3">Ticket List</h2>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -75,7 +108,8 @@
             </tr>
         </thead>
         <tbody>
-            </tbody>
+            <!-- Data will be dynamically inserted here -->
+        </tbody>
     </table>
 </div>
 
@@ -85,7 +119,6 @@
 
 <script>
     // You can add JavaScript here to handle form submission and dynamically add data to the table.
-    // Example:
     document.querySelector('form').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent default form submission
 
