@@ -5,6 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CallTek VM Request Form</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        .form-group label {
+        color: #ffffff; /* Blue color for label */
+        }
+        /* Change the font color of the input text */
+        .form-group input {
+        color: #ffffff; /* Dark grey color for the input text */
+        }
+        /* Overall container background */
+        .container {
+            background-color: #005299;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Color for form rows */
+        .form-row:nth-child(odd) {
+            background-color: #FF7900; /* Light blue */
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .form-row:nth-child(even) {
+            background-color: #FF7900; /* Light peach */
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Color for form groups */
+        .form-group {
+            background-color: #FF7900; /* Light grey-green */
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        
+
+        /* Custom color for header */
+        h2 {
+            color: #ffffff; /* Green color for headers */
+        }
+
+        /* Color for specific input fields */
+        .form-control {
+            border-radius: 5px;
+        }
+
+        /* Color for buttons and inputs */
+        .form-check-input {
+            margin-right: 10px;
+        }
+
+        .btn-primary, .btn-secondary {
+            background-color: #007bff; /* Blue for primary button */
+            border: none;
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        /* Color for checkboxes */
+        .form-check-label {
+            color: #333;
+        }
+
+        /* Input Fields */
+        input.form-control {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -16,7 +93,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="systemType">System Type</label>
-                    <input type="text" class="form-control" id="systemType" value="Virtual Machine" readonly>
+                    <input type="text" class="form-control" id="systemType" value="Virtual Machine" readonly style="color: #2e2e2e;">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="requesterName">Name of Requester</label>
@@ -27,7 +104,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="requestDate">Request Date</label>
-                    <input type="date" class="form-control" id="requestDate">
+                    <input type="date" class="form-control" id="requestDate" style="color:#111111;">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="engineerName">Name of Engineer</label>
@@ -38,7 +115,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="revisionDate">Revision Date</label>
-                    <input type="date" class="form-control" id="revisionDate">
+                    <input type="date" class="form-control" id="revisionDate" style="color: #1e1e1e;">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="approvedBy">Approved by</label>
@@ -49,7 +126,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="versionNo">Version No.</label>
-                    <input type="text" class="form-control" id="versionNo" value="VMRF 1.1" readonly>
+                    <input type="text" class="form-control" id="versionNo" value="VMRF 1.1" readonly style="color: #262626;">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="approvalDate">Approval Date</label>
@@ -59,7 +136,7 @@
 
             <hr>
 
-            <h4>Virtual Machine Details</h4>
+            <h4 class="text-center" style="color: #ffffff;">Virtual Machine Details</h4>
 
             <div class="form-group">
                 <label for="cpuCores">CPU Cores</label>
@@ -162,3 +239,11 @@
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="internalIp" id="internalIpNo" value="No">
+                    <label class="form-check-label" for="internalIpNo">No</label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
