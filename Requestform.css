@@ -1,0 +1,78 @@
+    body {
+
+    background-image: url("loginctc.png");
+    
+    }
+   .form-group label {
+    color: #ffffff; /* Blue color for label */
+    }
+    /* Change the font color of the input text */
+    .form-group input {
+    color: #ffffff; /* Dark grey color for the input text */
+    }
+    /* Overall container background */
+    .container {
+        background-color: #005299;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Color for form rows */
+    .form-row:nth-child(odd) {
+        background-color: #FF7900; /* Light blue */
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .form-row:nth-child(even) {
+        background-color: #FF7900; /* Light peach */
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    /* Color for form groups */
+    .form-group {
+        background-color: #FF7900; /* Light grey-green */
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    
+
+    /* Custom color for header */
+    h2 {
+        color: #ffffff; /* Green color for headers */
+    }
+
+    /* Color for specific input fields */
+    .form-control {
+        border-radius: 5px;
+    }
+
+    /* Color for buttons and inputs */
+    .form-check-input {
+        margin-right: 10px;
+    }
+
+    .btn-primary, .btn-secondary {
+        background-color: #007bff; /* Blue for primary button */
+        border: none;
+    }
+
+    .btn-primary:hover, .btn-secondary:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    /* Color for checkboxes */
+    .form-check-label {
+        color: #333;
+    }
+
+    /* Input Fields */
+    input.form-control {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+    }
