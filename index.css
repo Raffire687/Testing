@@ -1,1 +1,32 @@
+ body {
+    background-image: url("ctcstripe.png");
+ }
+ .table-gradient thead {
+    background: linear-gradient(to bottom, #005299, #005299); /* Light gray gradient */
+    color: #ffffff;
+  }
 
+  .table-gradient tbody tr:nth-child(odd) {
+    background-color: #005299; /* Very light gray for odd rows */
+    color: #ffffff;
+  }
+
+  .table-gradient tbody tr:nth-child(even) {
+    background-color: #005299; /* White for even rows */
+    color: #ffffff;
+  }
+
+  .table-gradient tbody tr:hover {
+    background-color: #005299; /* Light cyan on hover */
+  }
+  .table-gradient {
+    border-collapse: collapse; /* Collapse table borders so they look like a grid */
+    width: 100%; /* Optional: Adjust the width */
+    color: aqua;
+  }
+
+  label {
+    color: white;
+  }
+  
+  
