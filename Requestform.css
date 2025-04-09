@@ -1,7 +1,7 @@
     body {
 
     background-image: url("loginctc.png");
-    
+
     }
    .form-group label {
     color: #ffffff; /* Blue color for label */
@@ -75,4 +75,10 @@
     input.form-control {
         background-color: #ffffff;
         border: 1px solid #ccc;
+    }
+    .sidebar {
+        font-weight: bold;
+        color: #ffffff;
+        left: 50px;
+        padding-top: 15px;
     }
