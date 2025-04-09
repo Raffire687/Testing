@@ -1,6 +1,29 @@
-body {
+    body {
+        background-image: url("loginctc.png");
+    }
+    .create-ticket-container {
+        background-color: #FF7900;
+        padding: 20px;
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .ticket-list-container th {
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        text-align: center;
+    } 
 
-    background-image: url ("ctclogin.png");
-}
+    h2.mt-3 {
+    color: #ffffff; /* White color for example */
+    }
 
-
+    .ticket-list-container {
+        background-color: #005299;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgb(255, 255, 255);
+        color: white;
+    }
