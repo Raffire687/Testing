@@ -13,6 +13,22 @@
     <!-- Custom Styles & JS -->
     <script src="Login.js" defer></script>
     <link rel="stylesheet" href="Login.css">
+
+    <style>
+        /* Custom Register Button Styles */
+        .custom-register-btn {
+            background-color: #bd0d0d;  
+            color: white;  /* White text */
+            border: none;  /* Remove default border */
+            border-radius: 5px;  /* Optional: rounded corners */
+        }
+
+        /* Hover Effect */
+        .custom-register-btn:hover {
+            background-color: #8f0606;  /* Darker green when hovered */
+            cursor: pointer;  /* Change cursor to pointer on hover */
+        }
+    </style>
 </head>
 <body>
 
@@ -35,6 +51,10 @@
             </div>
             <div class="d-grid">
                 <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+            <!-- Register Button with custom style -->
+            <div class="d-grid mt-2">
+                <button type="button" id="registerButton" class="btn custom-register-btn">Register</button>
             </div>
         </form>
 
@@ -60,11 +80,15 @@
                 <button type="submit" class="btn btn-success">Register</button>
             </div>
         </form>
-        
-        <div class="text-center mt-3">
-            <button id="toggleForm" class="btn btn-link">Don't have an account? Register</button>
-        </div>
     </div>
 
+    <script>
+        // JavaScript to toggle between login and register forms
+        document.getElementById('registerButton').addEventListener('click', function() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+            document.getElementById('formTitle').textContent = 'Register';
+        });
+    </script>
 </body>
 </html>
