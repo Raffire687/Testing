@@ -24,7 +24,7 @@
             top: 0;
             left: 0;
             width: 200px;
-            padding-top: 120px;
+            padding-top: 120px;  /* to adjust sidebar labels */
         }
 
         .sidebar a {
@@ -37,7 +37,12 @@
         .sidebar a:hover {
             background-color: #031c8f; /* Slightly lighter on hover */
         }
-
+        .sidebar-custom {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+     
+       }
         /* Navbar */
         .main-header.navbar {
          z-index: 10;
@@ -64,6 +69,7 @@
             background-color: #FF7900; /* Primary color */
             color: white;
         }
+        
     </style>
 </head>
 
@@ -73,13 +79,12 @@
     <div class="sidebar">
         <a href="admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <a href="user.html"><i class="fas fa-users"></i> Users</a>
-        <a href="#"><i class="fas fa-chart-bar"></i> Reports</a>
         <a href="Requestform.html"> <i class="fas fa-question-circle"> </i> Request</a>
         <a href="ticketmanagement.html"> <i class="fa-solid fa-ticket" style="color: #ffffff;"></i> Ticket</a>
         <a href="excel.html"><i class="fa-solid fa-table" style="color: #ffffff;"></i> Excel </a>
         <a href="Server.html"><i class="fa-solid fa-server" style="color: #ffffff;"> </i> Server</a>
         <a href="index.html"><i class="fa-solid fa-bars-progress" style="color: #ffffff;"></i> Index </a>
-        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
     </div>
 
     <!-- Navbar -->
@@ -94,7 +99,7 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link" style="color: white;">Home</a>
+                    <a href="admin.html" class="nav-link" style="color: white;">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link" style="color: white;">Contact</a>
@@ -111,6 +116,33 @@
                     </div>
                 </li>
             </ul>
+
+            <!-- Right navbar links (Profile Picture & Name) -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Message Icon -->
+            <li class="nav-item dropdown">
+    <a class="nav-link" data-toggle="dropdown" href="#">
+        <a class="nav-link" href="messages.html" target="_blank">
+            <!-- Lift the icon a bit using position and top -->
+            <i class="fa-solid fa-message message-icon" style="color: #ffffff;"></i>
+            <span class="badge badge-danger navbar-badge">99</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <!-- Messages content (same as before) -->
+        </div>
+    </a>
+</li>
+
+            <!-- Profile Section (Picture + Name) -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" style="color: white;">
+                    <img src="guts.png" alt="Profile Picture" class="img-circle" style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%; border: 2px solid #fff; margin-right: 10px;">
+                    <span>Raphael Regis</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
@@ -130,10 +162,10 @@
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <a class="nav-link" href="messages.html" target="_blank">
 
-                        <i class="fa-solid fa-message" style="color: #ffffff;"></i>
-                        <span class="badge badge-danger navbar-badge">99</span>
+                            <i class="fa-solid fa-message" style="color: #ffffff; position: relative; top: -5px;"></i>
+                       <span class="badge badge-danger navbar-badge">99</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
