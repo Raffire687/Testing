@@ -1,4 +1,95 @@
 body {
-    background-color: #ff9900;
+    background-image: url("ctcblueish.png");
+}
+.excel-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .excel-table th,
+  .excel-table td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+    background-color: #ededed;
+    color: #000000;
+  }
+
+  .excel-table th {
+
+    font-weight: bold;
+  }
+
+  .excel-table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #FF7900;
+    color: #ffffff;
+    font-weight: bold;
+    z-index: 1;
+  }
+
+  .excel-table tbody td:nth-child(1),
+  .excel-table thead th:nth-child(1){
+    position: sticky;
+    left: 0;
+    background-color: #ededed;
+    color: #000000;
+    font-weight: bold;
+    z-index: 2;
+  }
+
+  .excel-table thead th:nth-child(1){
+    z-index: 3;
+  }
+  #myTable th:nth-child(1) {
+    background-color: #FF7900; /* Example: Coral color, change as needed */
+    color: white; /* Optional: Change the text color for better contrast */
    
+  }
+  /* Change font color for "Show entries" dropdown */
+.dataTables_length label, 
+.dataTables_length select {
+  color: rgb(255, 255, 255); /* Replace 'red' with your desired color */
+  font-family: Arial, sans-serif; /* Replace with your desired font */
+}
+
+/* Change font color for search box text */
+.dataTables_filter label, 
+.dataTables_filter input {
+  color: rgb(255, 255, 255); /* Replace 'blue' with your desired color */
+  font-family: Verdana, sans-serif; /* Replace with your desired font */
+}
+
+div.dataTables_info {
+  color: white !important;
+
+}
+
+div.dataTables_paginate a.paginate_button {
+
+  color: white !important;
+}
+
+div.dataTables_paginate {
+
+  color: white !important;
+}
+
+div.dataTables_paginate span.paginate_button.current {
+
+  color: white !important;
+}
+.dataTables_info {
+  color: white !important;
+}
+
+/* Pagination buttons: Previous, 1, Next */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  color: white !important;
+}
+
+/* Active page number (like "1") */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  color: white !important;
 }
