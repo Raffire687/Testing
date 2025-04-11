@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Panel</title>
+    <script src="settings.js" defer></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .settings-container {
+            display: flex;
+            max-width: 5000px;
+            margin: 0 auto;
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            min-height: 600px;
+        }
+        
+        .settings-sidebar {
+            width: 220px;
+            background-color: #005299;
+            border-right: 1px solid #e0e0e0;
+            padding: 20px 0;
+            color: #e9e9e9;
+        }
+        
+        .settings-main {
+            flex: 1;
+            padding: 30px;
+        }
+        
+        .sidebar-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+        }
+        
+        .sidebar-item:hover {
+            background-color: #000b87;
+        }
+        
+        .sidebar-item.active {
+            background-color: #012f85;
+            font-weight: bold;
+            border-left: 3px solid #ff9500;
+        }
+        
+        .sidebar-item .arrow {
+            transition: transform 0.2s;
+            color: #666;
+        }
+        
+        .sidebar-item.active .arrow {
+            transform: rotate(90deg);
+        }
+        
+        .settings-section {
+            margin-bottom: 25px;
+            display: none;
+        }
+        
+        .settings-section.visible {
+            display: block;
+        }
+        
+        .settings-section h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #333;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            max-width: 500px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+        
+        .form-control:focus {
+            border-color: #f48a00;
+            outline: none;
+        }
+        
+        .readonly-field {
+            background-color: #f9f9f9;
+            color: #666;
+            cursor: not-allowed;
+        }
+        
+        .checkbox-group {
+            margin-top: 25px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        .checkbox-item label {
+            font-weight: normal;
+            cursor: pointer;
+            user-select: none;
+            font-size: 14px;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            color: #333;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-container">
+        <div class="settings-sidebar">
+            <div class="sidebar-item" data-section="back"> Back</div> 
+            <div class="sidebar-item active" data-section="general"> General </div>
+            <div class="sidebar-item" data-section="mail">Mail</div>
+            <div class="sidebar-item" data-section="spam">Spam</div>
+            <div class="sidebar-item" data-section="calendar">Calendar</div>
+            <div class="sidebar-item" data-section="advanced">Advanced</div>
+        </div>
+        
+        <div class="settings-main">
+            <!-- General Settings Section -->
+            <div class="settings-section visible" id="general-section">
+                <h2>Account Settings</h2>
+                
+                <div class="form-group">
+                    <label for="displayName">Display Name:</label>
+                    <input type="text" id="displayName" class="form-control" placeholder="Enter your display name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="defaultAddress">Default Address:</label>
+                    <input type="text" id="defaultAddress" class="form-control readonly-field" 
+                           value="ctc_czar@mail2.calltekcenter.com" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="startupPage">Startup Page:</label>
+                    <select id="startupPage" class="form-control">
+                        <option>Account Summary</option>
+                        <option>Mail</option>
+                        <option>Calendar</option>
+                        <option>Contacts</option>
+                    </select>
+                </div>
+                
+                <h3 class="section-title">Message Options</h3>
+                
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="moveDeleted">
+                        <label for="moveDeleted">Move deleted messages to 'Deleted Items' folder</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="clearOnLogout">
+                        <label for="clearOnLogout">Clear deleted items on Log Out</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="allowCalendarAdd">
+                        <label for="allowCalendarAdd">Allow other users to automatically add into my calendar when they create a meeting request</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="autoLoginChat" checked>
+                        <label for="autoLoginChat">Automatically login to chat</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mail Settings Section -->
+            <div class="settings-section" id="mail-section">
+                <h2>Mail Settings</h2>
+                <div class="form-group">
+                    <label for="mailNotifications">Email Notifications:</label>
+                    <select id="mailNotifications" class="form-control">
+                        <option>Immediate</option>
+                        <option>Every 15 minutes</option>
+                        <option>Every hour</option>
+                        <option>Disabled</option>
+                    </select>
+                </div>
+                
+                <h3 class="section-title">Message Handling</h3>
+                
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="autoSaveDrafts" checked>
+                        <label for="autoSaveDrafts">Auto-save drafts</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="showImages">
+                        <label for="showImages">Show images in messages</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Spam Settings Section -->
+            <div class="settings-section" id="spam-section">
+                <h2>Spam Settings</h2>
+                <div class="form-group">
+                    <label for="spamLevel">Spam Filter Level:</label>
+                    <select id="spamLevel" class="form-control">
+                        <option>Aggressive</option>
+                        <option>Standard</option>
+                        <option>Relaxed</option>
+                        <option>Disabled</option>
+                    </select>
+                </div>
+                
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="markAsSpam" checked>
+                        <label for="markAsSpam">Mark messages as spam instead of deleting</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendar Settings Section -->
+            <div class="settings-section" id="calendar-section">
+                <h2>Calendar Settings</h2>
+                <div class="form-group">
+                    <label for="defaultView">Default View:</label>
+                    <select id="defaultView" class="form-control">
+                        <option>Day</option>
+                        <option>Week</option>
+                        <option>Month</option>
+                        <option>Agenda</option>
+                    </select>
+                </div>
+                
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="showWeekNumbers" checked>
+                        <label for="showWeekNumbers">Show week numbers</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="weatherInCalendar">
+                        <label for="weatherInCalendar">Show weather in calendar</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Advanced Settings Section -->
+            <div class="settings-section" id="advanced-section">
+                <h2>Advanced Settings</h2>
+                <div class="form-group">
+                    <label for="language">Language:</label>
+                    <select id="language" class="form-control">
+                        <option>English</option>
+                        <option>Spanish</option>
+                        <option>French</option>
+                        <option>German</option>
+                    </select>
+                </div>
+                
+                <h3 class="section-title">Developer Options</h3>
+                
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="devMode">
+                        <label for="devMode">Enable developer mode</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="debugLogging">
+                        <label for="debugLogging">Enable debug logging</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Handle sidebar item clicks
+        document.querySelectorAll('.sidebar-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const sectionId = this.getAttribute('data-section');
+                
+                // Remove active class from all items
+                document.querySelectorAll('.sidebar-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Hide all sections
+                document.querySelectorAll('.settings-section').forEach(section => {
+                    section.classList.remove('visible');
+                });
+                
+                // Show the selected section
+                if (sectionId) {
+                    document.getElementById(`${sectionId}-section`).classList.add('visible');
+                }
+            });
+        });
+        
+        // Initialize with General section visible
+        document.getElementById('general-section').classList.add('visible');
+    </script>
+</body>
+</html>
