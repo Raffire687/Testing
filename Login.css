@@ -75,12 +75,16 @@ button {
     background-color: rgba(154, 7, 7, 0.9);
     color: white;
 }
-.custom-register-btn {
-    background-color: #4CAF50;  /* Green background */
-    color: white;  /* White text */
+/* Custom Login Button Styles */
+.custom-login-btn {
+    background-color: #025dad;  /* Purple color, you can change this */
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
-.custom-register-btn:hover {
-    background-color: #1b7320;  /* Darker green when hovered */
+/* Hover Effect */
+.custom-login-btn:hover {
+    background-color: #013c6f;  /* Darker purple when hovered */
+    cursor: pointer;
 }
-
