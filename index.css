@@ -28,5 +28,12 @@
   label {
     color: white;
   }
-  
+  .sidebar {
+    font-weight: bold;
+    color: #ffffff;
+    left: 50px;
+    right: 100px;
+    padding-top: 15px;
+    padding-left: 20px; /* <-- add this */
+}
   
